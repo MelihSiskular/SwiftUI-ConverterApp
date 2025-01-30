@@ -9,14 +9,19 @@ import SwiftUI
 
 // MARK: Extracted Views
 struct ExchangeRate: View {
+    
+    let leftImageResoruce : ImageResource
+    let rightImageResrouce: ImageResource
+    let text: String
+    
     var body: some View {
         HStack {
-            Image(.goldpiece)
+            Image(leftImageResoruce)
                 .resizable()
                 .scaledToFit()
                 .frame(height: 33)
-            Text("1 Gold Piece = 4 Gold Pennies")
-            Image(.goldpenny)
+            Text(text)
+            Image(rightImageResrouce)
                 .resizable()
                 .scaledToFit()
                 .frame(height: 33)
@@ -24,6 +29,6 @@ struct ExchangeRate: View {
     }
 }
 
-#Preview {
-    ExchangeRate() //now we have 2 preview screen near by
+#Preview {    //Just for instance we gave some values to there
+    ExchangeRate(leftImageResoruce: .goldpiece, rightImageResrouce: .goldpenny, text: "1 Gold Piece = 4 Gold Pennies") //now we have 2 preview screen near by
 }
